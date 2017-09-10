@@ -7595,6 +7595,10 @@ a.am-close:hover {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 }
 
+.am-panel-for-cart{
+	margin-bottom: 0px;
+}
+
 .am-panel-hd,
 .am-panel>.am-table:first-child>tbody:first-child>tr:first-child td:first-child,
 .am-panel>.am-table:first-child>tbody:first-child>tr:first-child th:first-child,
@@ -7660,7 +7664,7 @@ a.am-close:hover {
 
 .am-panel-footer {
 	padding: .6rem 1.25rem;
-	background-color: #f5f5f5;
+	background-color: white;
 	border-top: 1px solid #ddd
 }
 
@@ -7670,7 +7674,7 @@ a.am-close:hover {
 
 .am-panel-default>.am-panel-hd {
 	color: #444;
-	background-color: #f5f5f5;
+	background-color: white;
 	border-color: #ddd
 }
 
@@ -7681,9 +7685,15 @@ a.am-close:hover {
 
 .am-panel-list-li {
 	border: 1px solid black;
-	margin: 3px 0 0 0;
+	margin: 5px 0 0 22px;
 	list-style-type: none;
 	padding: 0;
+	border-radius: 5px;
+	text-align: center;
+	background-color: #F7F7F7;
+	font: "宋体";
+	font-size: 12px;
+	width: 80%;
 }
 
 .am-panel-default>.am-panel-hd+.am-panel-collapse>.am-panel-bd {
@@ -8045,7 +8055,7 @@ img.am-thumbnail {
 	font-weight: 400
 }
 
-.am-thumbnail-caption :last-child {
+.am-thumbnail-caption:last-child {
 	margin-bottom: 0
 }
 
@@ -9328,7 +9338,7 @@ img.am-thumbnail {
 	display: block
 }
 
-.am-dropdown-content :first-child {
+.am-dropdown-content:first-child {
 	margin-top: 0
 }
 
@@ -10017,7 +10027,7 @@ ul.am-dropdown-content>.am-disabled>a:hover {
 
 .am-modal-actions {
 	bottom: 0;
-	z-index: 1110;
+	z-index: 20001;
 	/*text-align: center;*/
 	border-radius: 0;
 	transform: translateY(100%);
@@ -10040,6 +10050,10 @@ ul.am-dropdown-content>.am-disabled>a:hover {
 
 .am-modal-actions-group {
 	margin: 10px
+}
+
+.am-modal-actions-group-for-cart{
+	margin: 0px
 }
 
 .am-modal-actions-group .am-list {
@@ -13050,7 +13064,7 @@ tbody.am-collapse.am-in {
 
 .am-list-news-default .am-list .am-list-item-desced .am-list-item-operation,
 .am-list-news-default .am-list .am-list-item-desced>a,
-.am-list-news-default .am-list .am-list-item-thumb-top .am-list-item-operation{
+.am-list-news-default .am-list .am-list-item-thumb-top .am-list-item-operation {
 	float: right;
 }
 
@@ -14006,7 +14020,7 @@ tbody.am-collapse.am-in {
 	padding-right: 36px
 }
 
-.am-navbar-actions li a :after {
+.am-navbar-actions li a:after {
 	font-family: FontAwesome, sans-serif;
 	content: "\f105";
 	display: inline-block;
