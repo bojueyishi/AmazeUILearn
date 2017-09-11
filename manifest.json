@@ -1,4 +1,4 @@
-﻿{
+{
     "@platforms": ["android", "iPhone", "iPad"],
     "id": "H5AB11072",/*应用的标识，创建应用时自动生成，勿手动修改*/
     "name": "MallCode",/*应用名称，程序桌面图标名称*/
@@ -199,5 +199,114 @@
                 }
             }
         }
-    }
+    },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"assets/js/amazeui.min.js",
+					"img/Desert.jpg",
+					"img/Penguins.jpg",
+					"img/Lighthouse.jpg",
+					"assets/css/right-toolbar.css",
+					"assets/fonts/fontawesome-webfont.woff2",
+					"assets/js/jquery.min.js",
+					"assets/css/app.css",
+					"assets/css/amazeui.min.css",
+					"assets/i/favicon.png",
+					"assets/i/app-icon72x72@2x.png",
+					"detail.html"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"detail.html": {
+				"resources": [
+					"assets/i/favicon.png",
+					"assets/i/app-icon72x72@2x.png",
+					"assets/css/detailOrder.css",
+					"assets/js/xuanxiangka.js"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"assets/i/ui/logo.png",
+				"assets/i/ui/cloud.png",
+				"assets/fonts/fontawesome-webfont.ttf",
+				"orderForPay.html",
+				"assets/i/cpts/sohucs/sohucs-help-1.png",
+				"assets/i/ui/code.png",
+				"assets/fonts/fontawesome-webfont.eot",
+				"assets/i/examples/loginPage.png",
+				"assets/fonts/fontawesome-webfont.woff",
+				"assets/i/cpts/navbar/map.png",
+				"assets/i/ui/ui-logo.svg",
+				"assets/i/am/qr-wechat.jpg",
+				"assets/css/landing.min.css",
+				"footer.html",
+				"assets/i/examples/admin-safari.png",
+				"assets/css/codemirror.min.css",
+				"assets/i/cpts/gotop/ios7Gotop.png",
+				"img/side_icon02.png",
+				"temp.html",
+				"assets/css/amaze.min.css",
+				"assets/i/docs/widget.jpg",
+				"assets/i/examples/sidebarPage.png",
+				"assets/i/cpts/titlebar/oneHome.png",
+				"order.html",
+				"img/side_icon01.png",
+				"assets/i/examples/adminPage.png",
+				"cart.html",
+				"assets/js/main.min.js",
+				"assets/i/examples/admin-opera.png",
+				"assets/i/ui/mascot.png",
+				"assets/i/ui/logo.svg",
+				"assets/i/am/qr-wx.jpg",
+				"assets/i/ui/am-logo.png",
+				"assets/i/cpts/intro/WP_Cortana_China.png",
+				"assets/i/am/qr-wb.jpg",
+				"assets/i/cpts/sohucs/sohucs-help-2.png",
+				"assets/js/handlebars.min.js",
+				"img/zhifubaopay.jpg",
+				"assets/i/ui/qiniu-logo.png",
+				"usercenter.html",
+				"assets/js/debugger.min.js",
+				"assets/i/cpts/titlebar/chrome.png",
+				"assets/i/ui/web.png",
+				"assets/i/examples/landingPage.png",
+				"assets/js/codemirror.min.js",
+				"assets/i/ui/mascot.svg",
+				"assets/i/cpts/navbar/phone.png",
+				"assets/i/favicon.svg",
+				"assets/i/cpts/figure/WindMillLights_1366x768.jpg",
+				"assets/fonts/fontawesome-webfont.svg",
+				"assets/i/ui/mobile.png",
+				"assets/i/ui/chinese.png",
+				"img/side_icon05.png",
+				"assets/i/cpts/titlebar/logo.png",
+				"assets/js/amazeui.ie8polyfill.min.js",
+				"assets/i/cpts/navbar/Information.png",
+				"assets/i/ui/foundation.png",
+				"assets/i/examples/admin-firefox.png",
+				"assets/i/cpts/titlebar/oneMenu.png",
+				"productdetail.html",
+				"feedback.html",
+				"assets/i/startup-640x1096.png",
+				"assets/i/examples/admin-chrome.png",
+				"assets/i/examples/landing.png",
+				"assets/i/examples/admin-ie.png",
+				"assets/i/examples/blogPage.png",
+				"assets/fonts/FontAwesome.otf",
+				"assets/js/zepto.min.js",
+				"assets/i/docs/box-sizing.png",
+				"img/weixinpay.jpg",
+				"assets/i/cpts/titlebar/menu.png",
+				"assets/i/cpts/navbar/share.png",
+				"assets/i/am/qr-ui.jpg"
+			]
+		}
+	}
 }

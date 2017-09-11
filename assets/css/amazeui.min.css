@@ -4346,7 +4346,7 @@ a.am-badge:hover {
 .am-btn-group .am-btn+.am-btn-group,
 .am-btn-group .am-btn-group+.am-btn,
 .am-btn-group .am-btn-group+.am-btn-group {
-	margin-left: -1px
+	margin-left: 0px
 }
 
 .am-btn-toolbar {
