@@ -105,15 +105,69 @@
     	padding-bottom: 10px;
     	border-bottom: 1px ridge #BCE5FB;
     }
-    .liSelectedCss{
-       border: 1px solid black;
-	margin: 5px 0 0 22px;
-	list-style-type: none;
-	padding: 0;
-	border-radius: 5px;
-	text-align: center;
-	background-color: red;
-	font: "宋体";
-	font-size: 12px;
-	width: 80%;
+    
+    .liSelectedCss {
+    	border: 1px solid black;
+    	margin: 5px 0 0 22px;
+    	list-style-type: none;
+    	padding: 0;
+    	border-radius: 5px;
+    	text-align: center;
+    	background-color: red;
+    	font: "宋体";
+    	font-size: 12px;
+    	width: 80%;
+    }
+    
+    .bottom-fixed {
+    	position: fixed;
+    	bottom: 0;
+    	width: 100%;
+    	background: rgba(201, 231, 201, 1);
+    	z-index: 999
+    }
+    
+    .radio-li {
+    	height: 20px;
+    	border: 1px solid black;
+    	margin: 5px 0 0 22px;
+    	list-style-type: none;
+    }
+    
+    .radio-li>label {
+    	font-size: 10px;
+    	list-style-type: none;
+    }
+    
+    .am-radio-pay {
+    	display: block;
+    	vertical-align: middle
+    }
+    
+    .divAlone {
+    	padding-top: 5px;
+    	padding-bottom: 0px;
+    	background-color: #FFFFFF;
+    	position: relative;
+    	width: 100%;
+    }
+    
+    .ul-cut-dot {
+    	list-style-type: none;
+    }
+    
+    .hr-cut-margin-top-5 {
+    	border: 2 dashed #987cb9;
+    	width: 100%;
+    	color: #987cb9;
+    	size: 2;
+    	margin-top: 5px;
+    }
+    
+  .hr-cut-margin-top-10 {
+    	border: 2 dashed #987cb9;
+    	width: 100%;
+    	color: #987cb9;
+    	size: 2;
+    	margin-top: 10px;
     }
