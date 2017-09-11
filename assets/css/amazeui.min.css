@@ -7587,7 +7587,7 @@ a.am-close:hover {
 }
 
 .am-panel {
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 	background-color: #fff;
 	/*border: 1px solid transparent;*/
 	border-radius: 0;
@@ -7595,9 +7595,6 @@ a.am-close:hover {
 	box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
 }
 
-.am-panel-for-cart{
-	margin-bottom: 0px;
-}
 
 .am-panel-hd,
 .am-panel>.am-table:first-child>tbody:first-child>tr:first-child td:first-child,
@@ -10049,12 +10046,10 @@ ul.am-dropdown-content>.am-disabled>a:hover {
 }
 
 .am-modal-actions-group {
-	margin: 10px
+	margin: 0
 }
 
-.am-modal-actions-group-for-cart{
-	margin: 0px
-}
+
 
 .am-modal-actions-group .am-list {
 	margin: 0;
