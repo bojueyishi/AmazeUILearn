@@ -33,8 +33,39 @@
 
 		<link rel="stylesheet" href="assets/css/amazeui.min.css">
 		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="stylesheet" href="assets/css/cart.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
+
+		<script>
+			document.addEventListener("plusready", function() {
+				// 注册返回按键事件 
+				plus.key.addEventListener('backbutton', function() {
+					// 事件处理 
+					window.history.back();
+				}, false);
+			});
+		</script>
+		<script type="text/javascript">
+			function goTop() {
+				$('html,body').animate({
+					'scrollTop': 0
+				}, 200);
+			}
+
+			function switchEdit(target) {
+				if ($(target).text() == "编辑") {
+					$(target).text("完成");
+					$(target).parent().siblings(".editItemEditor").css("display", "block");
+					$(target).parent().siblings(".editItemDesc").css("display", "none");
+				} else {
+					$(target).text("编辑");
+					$(target).parent().siblings(".editItemEditor").css("display", "none");
+					$(target).parent().siblings(".editItemDesc").css("display", "block");
+				}
+			}
+		</script>
+
 	</head>
 
 	<body>
@@ -42,26 +73,23 @@
 			<div class="am-panel-hd am-panel-title-for-cart">
 				<span>购物车</span>
 			</div>
-			
-			<div class="am-panel-bd am-panel-item">
-				<span>共N件商品，总价（不包含运费）: ￥XXX元</span>
-			</div>
 
-			
-
-			<div class="am-panel-bd">
+			<div class="am-panel-bd-cart">
 				<div data-am-widget="list_news" class="am-list-news am-list-news-default">
-					<div class="am-list-news-bd">
+					<div class="am-list-news-bd" style="background-color: gainsboro">
 						<ul class="am-list">
 							<!--缩略图在标题左边-->
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" style="box-shadow: 0px 5px 2px #888888;">
+								<div class="am-u-sm-1">
+									<input type="radio" />
+								</div>
 								<div class="am-u-sm-4 am-list-thumb">
 									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
 										<img src="img/Desert.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！" />
 									</a>
 								</div>
 
-								<div class="am-u-sm-8 am-list-main">
+								<div class="am-u-sm-7 am-list-main">
 									<!--<h3 class="am-list-item-hd"><a href="https://www.baidu.com" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>-->
 									<div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>
 									<div>
@@ -77,21 +105,29 @@
 										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 									</div>
-									
-									<div style="text-align: right;">
-										<span class="am-icon-trash"></span>
-									</div>
+
 								</div>
 							</li>
 
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" style="box-shadow: 0px 5px 2px #888888;">
+								<div style="text-align: right;background-color: peachpuff;">
+									<ol class="am-breadcrumb">
+										<li><span>领劵</span></li>
+										<li><span onclick="switchEdit(this)">编辑</a></li>
+									</ol>
+								</div>
+
+								<div class="am-u-sm-1">
+									<input type="checkbox" checked>
+								</div>
+
 								<div class="am-u-sm-4 am-list-thumb">
 									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
 										<img src="img/Lighthouse.jpg" alt="我最喜欢的一张画" />
 									</a>
 								</div>
 
-								<div class=" am-u-sm-8 am-list-main">
+								<div class="am-u-sm-7 am-list-main editItemDesc">
 									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
 									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
 									<div>
@@ -100,27 +136,30 @@
 									</div>
 								</div>
 
-								<div class="am-list-item-operation">
-									<div class="am-btn-group">
+								<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;height: 85%;">
+									<div class="am-u-sm-9 am-btn-group">
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
 										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 									</div>
-									
-									<div style="text-align: right;">
-										<span class="am-icon-trash"></span>
+									<div class="am-u-sm-2" style="height: 100%;">
+										<button class="am-btn am-btn-danger" style="height: 100%;">删除</button>
 									</div>
+
 								</div>
 							</li>
 
 							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+								<div class="am-u-sm-1">
+									<input type="radio" />
+								</div>
 								<div class="am-u-sm-4 am-list-thumb">
 									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
 										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
 									</a>
 								</div>
 
-								<div class=" am-u-sm-8 am-list-main">
+								<div class=" am-u-sm-7 am-list-main">
 									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
 									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
 									<div>
@@ -136,20 +175,19 @@
 										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 									</div>
-									
-									<div style="text-align: right;">
-										<span class="am-icon-trash"></span>
-									</div>
 								</div>
 							</li>
 							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+								<div class="am-u-sm-1">
+									<input type="radio" />
+								</div>
 								<div class="am-u-sm-4 am-list-thumb">
 									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
 										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
 									</a>
 								</div>
 
-								<div class=" am-u-sm-8 am-list-main">
+								<div class=" am-u-sm-7 am-list-main">
 									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
 									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
 									<div>
@@ -165,20 +203,20 @@
 										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 									</div>
-									
-									<div style="text-align: right;">
-										<span class="am-icon-trash"></span>
-									</div>
+
 								</div>
 							</li>
 							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+								<div class="am-u-sm-1">
+									<input type="radio" />
+								</div>
 								<div class="am-u-sm-4 am-list-thumb">
 									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
 										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
 									</a>
 								</div>
 
-								<div class=" am-u-sm-8 am-list-main">
+								<div class=" am-u-sm-7 am-list-main">
 									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
 									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
 									<div>
@@ -194,20 +232,20 @@
 										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 									</div>
-									
-									<div style="text-align: right;">
-										<span class="am-icon-trash"></span>
-									</div>
+
 								</div>
 							</li>
 							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+								<div class="am-u-sm-1">
+									<input type="radio" />
+								</div>
 								<div class="am-u-sm-4 am-list-thumb">
 									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
 										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
 									</a>
 								</div>
 
-								<div class=" am-u-sm-8 am-list-main">
+								<div class=" am-u-sm-7 am-list-main">
 									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
 									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
 									<div>
@@ -223,19 +261,23 @@
 										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 									</div>
-									
-									<div style="text-align: right;">
-										<span class="am-icon-trash"></span>
-									</div>
+
 								</div>
 							</li>
 
 						</ul>
 					</div>
 
-					<!--更多在底部-->
 					<div class="am-list-news-ft">
-						<a class="am-list-news-more am-btn am-btn-size-auto am-btn-success am-round" href="#">立即结算</a>
+						<div class="am-fl">
+							<input type="radio" />全选
+						</div>
+						<div class="am-fr">
+							<a class="am-btn" href="#">结算(8)</a>
+						</div>
+						<div class="am-fr" style="padding-right: 10px;">
+							<span style="color: red;">合计: ￥XXX</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -265,7 +307,7 @@
 					</a>
 				</li>
 				<!--<li data-am-navbar-qrcode>-->
-					<li>
+				<li>
 					<a href="order.html" class="">
 						<span class="am-icon-list-alt"></span>
 						<span class="am-navbar-label">订单</span>

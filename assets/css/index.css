@@ -1,0 +1,17 @@
+.am-topbar-fixed-top-index {
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+	text-align: center;
+	/*background-color: black;*/
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0)
+}
+
+.am-form-field-search {
+	border-radius: 50px;
+	width: 350px;
+	
+}

@@ -33,6 +33,7 @@
 
 		<link rel="stylesheet" href="assets/css/amazeui.min.css">
 		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="stylesheet" href="assets/css/index.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
 
@@ -44,31 +45,31 @@
 				}, 200);
 			}
 		</script>
+
+		<script>
+			document.addEventListener("plusready", function() {
+				// 注册返回按键事件 
+				plus.key.addEventListener('backbutton', function() {
+					// 事件处理 
+					plus.nativeUI.confirm("退出程序？", function(event) {
+						if (event.index) {
+							plus.runtime.quit();
+						}
+					}, null, ["取消", "确定"]);
+				}, false);
+			});
+		</script>
 	</head>
 
 	<body>
-
-		<!--
-        	作者：1159722573@qq.com
-        	时间：2017-09-06
-        	描述：首页的置顶工具栏
-        -->
-		<header class="am-topbar am-topbar-fixed-top">
-			<!--<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>-->
-
-			<form class="am-topbar-form" role="search" method="get" action="https://www.baidu.com">
-				<div class="am-form-group am-input-group am-input-group-primary">
-					<input type="text" class="am-form-field am-input-sm" placeholder="搜索">
-					<span class="am-input-group-btn">
-        					<button class="am-btn am-btn-primary" type="submit"><span class="am-icon-search"></span></button>
-					</span>
+		<div class="am-topbar-fixed-top-index">
+			<form action="" class="am-form">
+				<div class="am-form-group am-form-icon" >
+					<i class="am-icon-search"></i>
+					<input type="text" class="am-form-field am-form-field-search" placeholder="搜索">
 				</div>
 			</form>
-
-			<!--<div class="am-topbar-right">
-					<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
-				</div>-->
-		</header>
+		</div>
 
 		<!--
         	作者：1159722573@qq.com
@@ -151,7 +152,6 @@
             	时间：2017-09-07
             	描述：对查询出来的商品列表进行操作的菜单bar
             -->
-
 			<div data-am-widget="titlebar" class="am-titlebar am-titlebar-multi">
 				<nav class="am-titlebar-nav">
 					<select data-am-selected="{ btnWidth:'20%', btnSize:'xs', btnStyle: 'success'}">
@@ -341,26 +341,6 @@
 			</li>
 		</ul>
 
-		<!-- List -->
-		<div data-am-widget="list_news" class="am-list-news am-list-news-default">
-			<!--列表标题-->
-			<div class="am-list-news-hd am-cf">
-				<!--带更多链接-->
-				<a href="###">
-					<h2>公告</h2>
-				</a>
-			</div>
-			<div class="am-list-news-bd">
-				<ul class="am-list">
-					<li class="am-g">
-						<a href="http://www.douban.com/online/11614662/" class="am-list-item-hd">我很囧，你保重....晒晒旅行中的那些囧！</a>
-					</li>
-					<li class="am-g">
-						<a href="http://www.douban.com/online/11624755/" class="am-list-item-hd">我最喜欢的一张画</a>
-					</li>
-				</ul>
-			</div>
-		</div>
 
 		<!--
         	作者：1159722573@qq.com
@@ -380,20 +360,11 @@
 
 		<!--更多在底部-->
 		<footer data-am-widget="footer" class="am-footer am-footer-default" data-am-footer="{  }">
-			<div class="am-footer-switch">
-				<span class="am-footer-ysp" data-rel="mobile" data-am-modal="{target: '#am-switch-mode'}">
-					          	云适配版
-					    </span>
-				<span class="am-footer-divider"> | </span>
-				<a id="godesktop" data-rel="desktop" class="am-footer-desktop" href="javascript:">
-					电脑版
-				</a>
-			</div>
 			<div class="am-footer-miscs ">
 
 				<p>由
-					<a href="http://www.yunshipei.com/" title="诺亚方舟" target="_blank" class="">诺亚方舟</a>
-					提供技术支持</p>
+					<a href="http://www.yunshipei.com/" title="诺亚方舟" target="_blank" class="">诺亚方舟</a> 提供技术支持
+				</p>
 				<p>CopyRight©2014 AllMobilize Inc. <span class="am-footer-divider"> | </span> 京ICP备13033158</p>
 			</div>
 		</footer>
@@ -403,7 +374,6 @@
         	时间：2017-09-06
         	描述：首页置底导航栏
         -->
-		<!--<iframe src="footer.html"></iframe>-->
 		<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default " id="">
 			<ul class="am-navbar-nav am-cf am-avg-sm-4">
 				<li>
@@ -440,7 +410,6 @@
 		<!--作者：06160517@163.com
 			时间：2017-09-10
 			描述：回到顶部按钮-->
-
 		<div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
 			<a href="#top" title="回到顶部">
 				<span class="am-gotop-title">回到顶部</span>

@@ -42,6 +42,17 @@
         -->
 		<script src="assets/js/xuanxiangka.js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="assets/css/detailOrder.css" />
+		
+		
+		<script>
+			document.addEventListener("plusready", function() {
+				// 注册返回按键事件 
+				plus.key.addEventListener('backbutton', function() {
+					// 事件处理 
+					window.history.back();
+				}, false);
+			});
+		</script>
 	</head>
 
 	<body>
@@ -388,7 +399,7 @@
 			</div>
 
 			<div class="am-modal-actions-group am-modal-actions-group-for-cart">
-				<a href="orderForPay.html" role="button" class="am-btn am-btn-danger am-btn-block">
+				<a href="create_order.html" role="button" class="am-btn am-btn-danger am-btn-block">
 					<span class="am-icon-cart-plus"></span>
 					<span class="am-navbar-label" style="font-size: 10px;">立即购买</span>
 				</a>

@@ -127,18 +127,18 @@
     	bottom: 0;
     	width: 100%;
     	background: rgba(201, 231, 201, 1);
-    	z-index: 999
+    	z-index: 999;
     }
     
     .radio-li {
-    	height: 20px;
-    	border: 1px solid black;
-    	margin: 5px 0 0 22px;
+    	/*height: 20px;*/
+    	/*border: 1px solid black;*/
+    	margin: 0px 0 0 22px;
     	list-style-type: none;
     }
     
     .radio-li>label {
-    	font-size: 10px;
+    	font-size: 12px;
     	list-style-type: none;
     }
     
@@ -147,16 +147,19 @@
     	vertical-align: middle
     }
     
-    .divAlone {
-    	padding-top: 5px;
-    	padding-bottom: 0px;
-    	background-color: #FFFFFF;
-    	position: relative;
-    	width: 100%;
-    }
-    
     .ul-cut-dot {
     	list-style-type: none;
+    }
+    
+    .am-panel-list-ul-for-order {
+    	padding: 0;
+    	margin: 0;
+    }
+    
+    label {
+    	/*display: inline-block;*/
+    	margin-bottom: 0px;
+    	font-weight: 700;
     }
     
     .hr-cut-margin-top-5 {
@@ -169,8 +172,23 @@
     
     .hr-cut-margin-top-10 {
     	border: 2 dashed #987cb9;
-    	width: 100%;
+    	/*width: 100%;*/
     	color: #987cb9;
     	size: 2;
     	margin-top: 10px;
     }
+    .am-fr-20{
+    	float: right;
+    	margin-right: 20px;
+    }
+
+	.bottom-line-div{
+		border-bottom: 1px ridge #BCE5FB;
+		margin-bottom: 5px;
+	}
+
+	.title-background{
+		background-color: #E8F2FF;
+		padding-bottom: 5px;
+		margin-top: 5px;
+	}
