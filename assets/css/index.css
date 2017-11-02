@@ -14,4 +14,26 @@
 	border-radius: 50px;
 	width: 350px;
 	
+	
 }
+
+.themeColor{
+	
+}
+/*.navbarIconColor{
+	color: grey;
+}*/
+
+.footNav{
+	border-top: 1px solid gainsboro;
+}
+
+.defaultNavItem span{
+	color: grey;
+}
+
+.selectedNavItem span{
+	color: darkred;
+}
+
+
