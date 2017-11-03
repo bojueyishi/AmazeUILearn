@@ -31,53 +31,50 @@
 		<meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
 		<meta name="msapplication-TileColor" content="#0e90d2">
 
-		<link rel="stylesheet" href="assets/css/amazeui.min.css">
+		<!--<link rel="stylesheet" href="assets/css/amazeui.min.css">-->
 		<link rel="stylesheet" href="assets/css/app.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
 
 		<style>
-			body {
-				height: 1000px;
-			}
-			/*div {
-				height: 100px;
-				width: 100px;
-				display: inline-block;
-				margin: 0;
-				padding: 0;
-			}*/
-		</style>
-		<style>
-			.father {
-				position: fixed;
+			.content {
+				display: table;
+				border: 1px solid #06c;
 				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-				background-color: gainsboro;
+				height: 300px;
 			}
 			
-			.son {
-				position: absolute;
-				top: 0;
-				left: 0;
-				bottom: 0;
-				right: 0;
-				width: 50%;
-				height: 50%;
-				margin: auto;
-				background-color: green;
+			.box {
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ccc;
+				text-align: center;
+				display: inline-block;
+				font-size: 40px;
+				line-height: 100px;
+			}
+			
+			.right {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			.left {
+				display: table-cell;
+				vertical-align: middle;
 			}
 		</style>
 	</head>
 
 	<body>
-		<ol class="am-breadcrumb">
-  <li><a href="#">首页</a></li>
-  <li><a href="#">分类</a></li>
-  <li class="am-active">内容</li>
-</ol>
+		<div class="content">
+			<div class="left">
+				<div class="box">B</div>
+			</div>
+			<div class="right">
+				<div class="box">A</div>
+			</div>
+		</div>
 
 	</body>
 

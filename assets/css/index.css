@@ -25,7 +25,8 @@
 }*/
 
 .footNav{
-	border-top: 1px solid gainsboro;
+	box-shadow: 0 -1px 10px gray;
+	/*border-top: 1px solid gainsboro;*/
 }
 
 .defaultNavItem span{

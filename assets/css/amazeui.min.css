@@ -317,7 +317,6 @@ dl,
 fieldset,
 figure,
 hr,
-ol,
 p,
 pre,
 ul {
@@ -503,7 +502,7 @@ blockquote p:last-of-type {
 }
 
 [class*=am-u-]+[class*=am-u-]:last-child {
-	float: right
+	/*float: right*/
 }
 
 [class*=am-u-]+[class*=am-u-].am-u-end {
@@ -2234,7 +2233,7 @@ output {
 	opacity: 1;
 	background-color: #fff;
 	background-image: none;
-	border: 1px solid grey;
+	border: 1px solid gainsboro;
 	/*border-radius: 0;*/
 	-webkit-appearance: none;
 	-webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
@@ -2471,6 +2470,11 @@ fieldset[disabled] .am-form-field {
 .am-form-group {
 	/*margin-bottom: 1.5rem*/
 	margin-bottom: 0;
+	padding: 5px 10px 5px 10px;
+	
+	/*border-bottom: 1px solid grey;*/
+	box-shadow: 0px 1px 5px grey;
+	/*opacity: 0.5;*/
 }
 
 .am-form-file {
@@ -2714,18 +2718,19 @@ input[type=radio][disabled] {
 }
 
 .am-form-icon {
-	position: relative
+	position: relative;
 }
 
 .am-form-icon .am-form-field {
-	padding-left: 1.75em!important
+	padding-left: 1.8em!important
 }
 
 .am-form-icon [class*=am-icon-] {
 	position: absolute;
-	left: .5em;
+	left: 1em;
 	top: 50%;
 	display: block;
+	color: gray;
 	margin-top: -.5em;
 	line-height: 1;
 	z-index: 2
@@ -3277,6 +3282,10 @@ ul.am-dropdown-content>li>a {
 
 .am-breadcrumb>li {
 	display: inline-block
+}
+
+.am-breadcrumb span {
+	color: gray;
 }
 
 .am-breadcrumb>li [class*=am-icon-]:before {
@@ -7469,7 +7478,7 @@ a.am-close:hover {
 	position: relative;
 	display: block;
 	margin-bottom: -1px;
-	background-color: #fff;
+	/*background-color: #fff;*/
 	/*border: 1px solid #dedede;*/
 	color: #000000;
 	border-width: 1px 0;
@@ -7644,18 +7653,6 @@ a.am-close:hover {
 	padding: 1.25rem
 }
 
-.am-panel-title-for-cart {
-	margin: 0;
-	font-size: 100%;
-	color: inherit;
-	position: fixed;
-	right: 0;
-	left: 0;
-	z-index: 1000;
-	-webkit-transform: translate3d(0, 0, 0);
-	transform: translate3d(0, 0, 0)
-}
-
 .am-panel-title-for-usercenter{
 	margin: 0;
 	font-size: 100%;
@@ -7736,9 +7733,10 @@ a.am-close:hover {
 
 
 .am-panel-primary>.am-panel-hd {
-	color: #fff;
-	background-color: #0e90d2;
-	border-color: #10a0ea
+	color: black;
+	background-color: white;
+	box-shadow: 0px 1px 5px gray;
+	
 }
 
 .am-panel-primary>.am-panel-item {
@@ -13009,7 +13007,7 @@ tbody.am-collapse.am-in {
 }
 
 .am-list-item-desced {
-	padding-bottom: 1rem
+	/*padding-bottom: 1rem*/
 }
 
 .am-list-item-desced>a {
@@ -13036,15 +13034,36 @@ tbody.am-collapse.am-in {
 
 .am-list-news-ft {
 	/*text-align: center;*/
+	display: table;
 	position: fixed;
 	bottom: 0;
 	background-color: white;
+	border-top:1px solid gainsboro ;
 	width: 100%;
+}
+
+.am-list-news-ft .am-list-news-ft-all{
+	padding-left: 1rem;
+	width: 20%;
+}
+
+.am-list-news-ft .am-list-news-ft-total{
+	padding-right: 1rem;
+	width: 60%;
+}
+
+.am-list-news-ft .am-list-news-ft-checkout{
+ 	width: 20%;
 }
 
 .am-list-news-ft a{
 	color: white;
 	background-color:lightcoral;
+}
+
+.am-list-news-ft div{
+	display: table-cell;
+	vertical-align: middle;
 }
 
 .am-list-news .am-titlebar {

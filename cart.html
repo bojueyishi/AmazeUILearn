@@ -32,7 +32,6 @@
 		<meta name="msapplication-TileColor" content="#0e90d2">
 
 		<link rel="stylesheet" href="assets/css/amazeui.min.css">
-		<link rel="stylesheet" href="assets/css/app.css">
 		<link rel="stylesheet" href="assets/css/cart.css">
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
@@ -52,16 +51,27 @@
 					'scrollTop': 0
 				}, 200);
 			}
+			
+			function changeSelectAllInCart(target){
+				console.log($(target).prop("checked"));
+				if($(target).prop("checked")){
+					console.log(1);
+					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked",true);
+				}else{
+					console.log(2);
+					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked",false);
+				}
+			}
 
 			function switchEdit(target) {
 				if ($(target).text() == "编辑") {
 					$(target).text("完成");
-					$(target).parent().siblings(".editItemEditor").css("display", "block");
-					$(target).parent().siblings(".editItemDesc").css("display", "none");
+					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemEditor").css("display", "block");
+					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemDesc").css("display", "none");
 				} else {
 					$(target).text("编辑");
-					$(target).parent().siblings(".editItemEditor").css("display", "none");
-					$(target).parent().siblings(".editItemDesc").css("display", "block");
+					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemEditor").css("display", "none");
+					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemDesc").css("display", "block");
 				}
 			}
 		</script>
@@ -77,208 +87,103 @@
 			<div class="am-panel-bd-cart">
 				<div data-am-widget="list_news" class="am-list-news am-list-news-default">
 					<div class="am-list-news-bd" style="background-color: gainsboro">
-						<ul class="am-list">
-							<!--缩略图在标题左边-->
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" style="box-shadow: 0px 5px 2px #888888;">
-								<div class="am-u-sm-1">
-									<input type="radio" />
-								</div>
-								<div class="am-u-sm-4 am-list-thumb">
-									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
-										<img src="img/Desert.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！" />
-									</a>
-								</div>
-
-								<div class="am-u-sm-7 am-list-main">
-									<!--<h3 class="am-list-item-hd"><a href="https://www.baidu.com" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>-->
-									<div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>
-									<div>
-										<span><strong>￥3780</strong></span>
-										<span>1000人付款</span>
-										<span>包邮</span>
-									</div>
-								</div>
-
-								<div class="am-list-item-operation">
-									<div class="am-btn-group">
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
-									</div>
-
-								</div>
-							</li>
-
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left" style="box-shadow: 0px 5px 2px #888888;">
-								<div style="text-align: right;background-color: peachpuff;">
+						<ul class="am-list" id="cartProductContainer">
+							<li class="am-list-product-item am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
+								<div class="am-list-product-item-title">
 									<ol class="am-breadcrumb">
 										<li><span>领劵</span></li>
-										<li><span onclick="switchEdit(this)">编辑</a></li>
+										<li><span onclick="switchEdit(this)">编辑</span></li>
 									</ol>
 								</div>
 
-								<div class="am-u-sm-1">
-									<input type="checkbox" checked>
-								</div>
-
-								<div class="am-u-sm-4 am-list-thumb">
-									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
-										<img src="img/Lighthouse.jpg" alt="我最喜欢的一张画" />
-									</a>
-								</div>
-
-								<div class="am-u-sm-7 am-list-main editItemDesc">
-									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
-									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-									<div>
-										<span><strong>￥3780</strong></span>
-										<span>1000人付款</span>
-									</div>
-								</div>
-
-								<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;height: 85%;">
-									<div class="am-u-sm-9 am-btn-group">
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
-									</div>
-									<div class="am-u-sm-2" style="height: 100%;">
-										<button class="am-btn am-btn-danger" style="height: 100%;">删除</button>
+								<div class="am-list-product-item-detial">
+									<div class="am-list-product-item-detialitem am-list-product-item-detialitem-checkbox">
+										<input type="checkbox"  />
 									</div>
 
-								</div>
-							</li>
-
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
-								<div class="am-u-sm-1">
-									<input type="radio" />
-								</div>
-								<div class="am-u-sm-4 am-list-thumb">
-									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
-										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
-									</a>
-								</div>
-
-								<div class=" am-u-sm-7 am-list-main">
-									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
-									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-									<div>
-										<span><strong>￥3780</strong></span>
-										<span>1000人付款</span>
-										<span>包邮</span>
+									<div class="am-u-sm-4 am-list-thumb am-list-product-item-detialitem">
+										<a href="#">
+											<img src="img/Lighthouse.jpg" alt="我最喜欢的一张画" />
+										</a>
 									</div>
-								</div>
 
-								<div class="am-list-item-operation">
-									<div class="am-btn-group">
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
+									<div class="am-u-sm-8 am-list-main editItemDesc">
+										<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
+										<div>
+											<span><strong>￥3780</strong></span>
+											<span>1000人付款</span>
+										</div>
+									</div>
+
+									<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;height: 85%;">
+										<div class="am-u-sm-9 am-btn-group">
+											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
+											<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
+											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
+										</div>
+										<div class="am-u-sm-2" style="height: 100%;">
+											<button class="am-btn am-btn-danger" style="height: 100%;">删除</button>
+										</div>
 									</div>
 								</div>
 							</li>
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
-								<div class="am-u-sm-1">
-									<input type="radio" />
-								</div>
-								<div class="am-u-sm-4 am-list-thumb">
-									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
-										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
-									</a>
+
+							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left am-list-product-item">
+								<div class="am-list-product-item-title">
+									<ol class="am-breadcrumb">
+										<li><span>领劵</span></li>
+										<li><span onclick="switchEdit(this)">编辑</span></li>
+									</ol>
 								</div>
 
-								<div class=" am-u-sm-7 am-list-main">
-									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
-									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-									<div>
-										<span><strong>￥3780</strong></span>
-										<span>1000人付款</span>
-										<span>包邮</span>
-									</div>
-								</div>
-
-								<div class="am-list-item-operation">
-									<div class="am-btn-group">
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
+								<div class="am-list-product-item-detial">
+									<div class="am-list-product-item-detialitem am-list-product-item-detialitem-checkbox">
+										<input type="checkbox"  />
 									</div>
 
+									<div class="am-u-sm-4 am-list-thumb am-list-product-item-detialitem">
+										<a href="#">
+											<img src="img/Lighthouse.jpg" alt="我最喜欢的一张画" />
+										</a>
+									</div>
+
+									<div class="am-u-sm-8 am-list-main editItemDesc">
+										<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
+										<div>
+											<span><strong>￥3780</strong></span>
+											<span>1000人付款</span>
+										</div>
+									</div>
+
+									<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;height: 85%;">
+										<div class="am-u-sm-9 am-btn-group">
+											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
+											<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
+											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
+										</div>
+										<div class="am-u-sm-2" style="height: 100%;">
+											<button class="am-btn am-btn-danger" style="height: 100%;">删除</button>
+										</div>
+									</div>
 								</div>
 							</li>
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
-								<div class="am-u-sm-1">
-									<input type="radio" />
-								</div>
-								<div class="am-u-sm-4 am-list-thumb">
-									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
-										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
-									</a>
-								</div>
-
-								<div class=" am-u-sm-7 am-list-main">
-									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
-									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-									<div>
-										<span><strong>￥3780</strong></span>
-										<span>1000人付款</span>
-										<span>包邮</span>
-									</div>
-								</div>
-
-								<div class="am-list-item-operation">
-									<div class="am-btn-group">
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
-									</div>
-
-								</div>
-							</li>
-							<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-left">
-								<div class="am-u-sm-1">
-									<input type="radio" />
-								</div>
-								<div class="am-u-sm-4 am-list-thumb">
-									<a href="#" data-am-modal="{target: '#doc-modal-1'}" class="">
-										<img src="img/Penguins.jpg" alt="我最喜欢的一张画" />
-									</a>
-								</div>
-
-								<div class=" am-u-sm-7 am-list-main">
-									<!--<h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>-->
-									<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-									<div>
-										<span><strong>￥3780</strong></span>
-										<span>1000人付款</span>
-										<span>包邮</span>
-									</div>
-								</div>
-
-								<div class="am-list-item-operation">
-									<div class="am-btn-group">
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-										<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-										<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
-									</div>
-
-								</div>
-							</li>
-
 						</ul>
 					</div>
 
-					<div class="am-list-news-ft">
-						<div class="am-fl">
-							<input type="radio" />全选
-						</div>
-						<div class="am-fr">
-							<a class="am-btn" href="#">结算(8)</a>
-						</div>
-						<div class="am-fr" style="padding-right: 10px;">
-							<span style="color: red;">合计: ￥XXX</span>
-						</div>
-					</div>
+				</div>
+			</div>
+
+			<div class="am-list-news-ft">
+				<div class="am-text-left am-list-news-ft-all">
+					<input type="checkbox" onclick="changeSelectAllInCart(this)"/> 全选
+				</div>
+				
+				<div class="am-text-right am-list-news-ft-total">
+					<span style="color: red;">合计: ￥XXX</span>
+				</div>
+				
+				<div class="am-text-right am-list-news-ft-checkout">
+					<a class="am-btn" href="#">结算(8)</a>
 				</div>
 			</div>
 		</div>

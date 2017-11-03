@@ -39,6 +39,18 @@
 
 		<link rel="stylesheet" href="assets/css/right-toolbar.css" />
 		<script type="text/javascript">
+			window.onscroll = function() {
+				var t = document.documentElement.scrollTop || document.body.scrollTop;
+				console.log(t);
+				if (t > 0) {
+					$("#topbarContainer").css("background-color", "white");
+					$("#topbarSearcher").css("background-color","darkgray");
+				} else if (t == 0) {
+					$("#topbarContainer").css("background-color", "");
+					$("#topbarSearcher").css("background-color","");
+				}
+			}
+
 			function goTop() {
 				$('html,body').animate({
 					'scrollTop': 0
@@ -64,9 +76,9 @@
 	<body>
 		<div class="am-topbar-fixed-top-index">
 			<form action="" class="am-form">
-				<div class="am-form-group am-form-icon" >
+				<div id="topbarContainer" class="am-form-group am-form-icon">
 					<i class="am-icon-search"></i>
-					<input type="text" class="am-form-field am-form-field-search" placeholder="搜索">
+					<input type="text" id="topbarSearcher" class="am-form-field am-form-field-search" placeholder="搜索">
 				</div>
 			</form>
 		</div>
@@ -341,15 +353,14 @@
 			</li>
 		</ul>
 
-
 		<!--更多在底部-->
 		<footer data-am-widget="footer" class="am-footer am-footer-default" data-am-footer="{  }">
 			<div class="am-footer-miscs ">
-
+				<p><span class="am-icon-heartbeat"></span></p>
 				<p>由
-					<a href="http://www.yunshipei.com/" title="诺亚方舟" target="_blank" class="">诺亚方舟</a> 提供技术支持
+					<a href="http://www.yunshipei.com/" title="诺亚方舟" target="_blank" class="">熊喵科技</a> 提供技术支持
 				</p>
-				<p>CopyRight©2014 AllMobilize Inc. <span class="am-footer-divider"> | </span> 京ICP备13033158</p>
+				
 			</div>
 		</footer>
 
