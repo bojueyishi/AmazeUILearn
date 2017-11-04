@@ -1,5 +1,5 @@
 .editItemEditor{
-	
+	display: table;
 }
 
 .editItemDesc{
@@ -48,4 +48,13 @@
 
 .am-list-product-item .am-list-product-item-detial .am-list-product-item-detialitem-checkbox{
 	padding:0 1rem 0 1rem;
+}
+
+.cartlist-item-checkboxflag{
+	
+}
+
+.am-table-cell{
+	display: table-cell;
+	vertical-align: middle;
 }

@@ -51,20 +51,19 @@
 					'scrollTop': 0
 				}, 200);
 			}
-			
-			function changeSelectAllInCart(target){
-				console.log($(target).prop("checked"));
-				if($(target).prop("checked")){
-					console.log(1);
-					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked",true);
-				}else{
-					console.log(2);
-					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked",false);
+
+			function changeSelectAllInCart(target) {
+				if($(target).prop("checked")) {
+					//					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked", true);
+					$(".cartlist-item-checkboxflag").uCheck('check');
+				} else {
+					//					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked", false);
+					$(".cartlist-item-checkboxflag").uCheck('uncheck');
 				}
 			}
 
 			function switchEdit(target) {
-				if ($(target).text() == "编辑") {
+				if($(target).text() == "编辑") {
 					$(target).text("完成");
 					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemEditor").css("display", "block");
 					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemDesc").css("display", "none");
@@ -98,7 +97,9 @@
 
 								<div class="am-list-product-item-detial">
 									<div class="am-list-product-item-detialitem am-list-product-item-detialitem-checkbox">
-										<input type="checkbox"  />
+										<label class="am-checkbox am-danger">
+  											<input class="cartlist-item-checkboxflag" type="checkbox" checked="checked" value="" data-am-ucheck checked / >
+										</label>
 									</div>
 
 									<div class="am-u-sm-4 am-list-thumb am-list-product-item-detialitem">
@@ -115,14 +116,16 @@
 										</div>
 									</div>
 
-									<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;height: 85%;">
-										<div class="am-u-sm-9 am-btn-group">
+									<div class="am-u-sm-8 am-list-item-operation editItemEditor" style="display: none;">
+										<div class="am-btn-group am-table-cell">
 											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
 											<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
 											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
 										</div>
-										<div class="am-u-sm-2" style="height: 100%;">
-											<button class="am-btn am-btn-danger" style="height: 100%;">删除</button>
+										<div class="am-table-cell am-text-right">
+											<div style="display: inline-block;height: 50px;width: 50px;background-color: red;">
+												<!--<button class="">删除</button>-->
+											</div>
 										</div>
 									</div>
 								</div>
@@ -138,7 +141,9 @@
 
 								<div class="am-list-product-item-detial">
 									<div class="am-list-product-item-detialitem am-list-product-item-detialitem-checkbox">
-										<input type="checkbox"  />
+										<label class="am-checkbox am-danger">
+  											<input class="cartlist-item-checkboxflag" type="checkbox" checked="checked" value="" data-am-ucheck/ >
+										</label>
 									</div>
 
 									<div class="am-u-sm-4 am-list-thumb am-list-product-item-detialitem">
@@ -155,7 +160,7 @@
 										</div>
 									</div>
 
-									<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;height: 85%;">
+									<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;">
 										<div class="am-u-sm-9 am-btn-group">
 											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
 											<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
@@ -175,13 +180,15 @@
 
 			<div class="am-list-news-ft">
 				<div class="am-text-left am-list-news-ft-all">
-					<input type="checkbox" onclick="changeSelectAllInCart(this)"/> 全选
+					<label class="am-checkbox am-danger">
+  						<input type="checkbox" onclick="changeSelectAllInCart(this)" checked="checked" value="" data-am-ucheck checked / > 全选
+					</label>
 				</div>
-				
+
 				<div class="am-text-right am-list-news-ft-total">
 					<span style="color: red;">合计: ￥XXX</span>
 				</div>
-				
+
 				<div class="am-text-right am-list-news-ft-checkout">
 					<a class="am-btn" href="#">结算(8)</a>
 				</div>
