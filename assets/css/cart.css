@@ -1,8 +1,44 @@
-.editItemEditor{
-	display: table;
+.editItemEditor {
+	width: 70%;
+    padding-left: 1rem;
 }
 
-.editItemDesc{
+.editItemEditor .optionItem {
+	width: 78%;
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	background-color: deepskyblue;
+	position: relative;
+	/*margin-left: 1rem;*/
+}
+
+.editItemEditor .delelteItem {
+	width: 20%;
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	background-color: crimson;
+}
+
+.editItemDesc {
+	font-size: 1.3rem;;
+	width: 70%;
+	padding-left: 1rem;
+	
+}
+
+.editItemDesc .desc{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-height: 3.5em
+} 
+
+.editItemDesc .spec{
+	
+}
+
+.editItemDesc .priceAndcount{
 	
 }
 
@@ -19,42 +55,48 @@
 	transform: translate3d(0, 0, 0)
 }
 
-.am-panel-bd-cart{
+.am-panel-bd-cart {
 	margin-top: 4rem;
 }
 
-.am-list-product-item{
-	background-color: #feead7;
+.am-list-product-item {
+	background-color: #F5F5DC;
 }
 
-.am-list-product-item .am-list-product-item-title{
+.am-list-product-item .am-list-product-item-title {
 	text-align: right;
 	background-color: white;
 }
 
-.am-list-product-item .am-list-product-item-title ol{
+.am-list-product-item .am-list-product-item-title ol {
 	padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-.am-list-product-item .am-list-product-item-detial{
+.am-list-product-item .am-list-product-item-detial {
 	display: table;
 	margin-top: 1rem;
 }
 
-.am-list-product-item .am-list-product-item-detial .am-list-product-item-detialitem{
+.am-list-product-item .am-list-product-item-detial .am-list-product-item-detialitem {
 	display: table-cell;
 	vertical-align: middle;
 }
 
-.am-list-product-item .am-list-product-item-detial .am-list-product-item-detialitem-checkbox{
-	padding:0 1rem 0 1rem;
+.am-list-product-item .am-list-product-item-detial .am-list-product-item-detialitem-checkbox {
+	padding: 0 1rem 0 1rem;
 }
 
-.cartlist-item-checkboxflag{
-	
+.am-list-product-item .am-list-product-item-detial .am-list-product-item-detialitem-img {
+	width: 30%;
 }
 
-.am-table-cell{
+.cartlist-item-checkboxflag {}
+
+.my-spec-change {
+	box-shadow: 0px 1px 5px grey;
+}
+
+.am-table-cell {
 	display: table-cell;
 	vertical-align: middle;
 }

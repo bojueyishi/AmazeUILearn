@@ -46,6 +46,24 @@
 			});
 		</script>
 		<script type="text/javascript">
+			$(function() {
+				$(".cartlist-item-checkboxflag").click(function() {
+					if ($(this).prop("checked")) {
+						var allchecked = true;
+						$(".cartlist-item-checkboxflag").each(function(index, element) {
+							if (!$(element).prop("checked")) {
+								allchecked = false;
+							}
+						});
+						if (allchecked) {
+							$("#selectAll").uCheck('check');
+						}
+					} else {
+						$("#selectAll").uCheck('uncheck');
+					}
+				});
+			});
+
 			function goTop() {
 				$('html,body').animate({
 					'scrollTop': 0
@@ -53,24 +71,22 @@
 			}
 
 			function changeSelectAllInCart(target) {
-				if($(target).prop("checked")) {
-					//					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked", true);
+				if ($(target).prop("checked")) {
 					$(".cartlist-item-checkboxflag").uCheck('check');
 				} else {
-					//					$("#cartProductContainer").children().children(".am-list-product-item-detial").children(".am-list-product-item-detialitem-checkbox").children("input").attr("checked", false);
 					$(".cartlist-item-checkboxflag").uCheck('uncheck');
 				}
 			}
 
 			function switchEdit(target) {
-				if($(target).text() == "编辑") {
+				if ($(target).text() == "编辑") {
 					$(target).text("完成");
-					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemEditor").css("display", "block");
+					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemEditor").css("display", "table-cell");
 					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemDesc").css("display", "none");
 				} else {
 					$(target).text("编辑");
 					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemEditor").css("display", "none");
-					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemDesc").css("display", "block");
+					$(target).parent().parent().parent().siblings(".am-list-product-item-detial").children(".editItemDesc").css("display", "table-cell");
 				}
 			}
 		</script>
@@ -102,29 +118,45 @@
 										</label>
 									</div>
 
-									<div class="am-u-sm-4 am-list-thumb am-list-product-item-detialitem">
+									<div class="am-list-thumb am-list-product-item-detialitem am-list-product-item-detialitem-img">
 										<a href="#">
 											<img src="img/Lighthouse.jpg" alt="我最喜欢的一张画" />
 										</a>
 									</div>
 
-									<div class="am-u-sm-8 am-list-main editItemDesc">
-										<div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-										<div>
+									<div class="am-list-product-item-detialitem editItemDesc">
+										<div class="desc">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
+										<div class="spec">这个是规格说明展示栏</div>
+										<div class="priceAndcount">
 											<span><strong>￥3780</strong></span>
-											<span>1000人付款</span>
+											<span>*2</span>
 										</div>
 									</div>
 
-									<div class="am-u-sm-8 am-list-item-operation editItemEditor" style="display: none;">
-										<div class="am-btn-group am-table-cell">
-											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-											<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
+									<div class="am-list-thumb am-list-product-item-detialitem editItemEditor" style="display: none;">
+										<div class="optionItem">
+											<!--<div class="am-btn-group" >
+												<button type="button" class="am-btn am-btn-xs"><strong>-</strong></button>
+												<input class="am-btn-input" placeholder="1" style="text-align:center" />
+												<button type="button" class="am-btn am-btn-xs"><strong>+</strong></button>
+											</div>-->
+
+											
+											
+											<div style="position: absolute;bottom: 0px;width: 100%;">
+												<input type="text" class="am-form-field" placeholder="规格变更">
+											</div>
+
+											
+											<div class="am-form-icon">
+												<input type="text" class="am-form-field" placeholder="规格变更">
+												<i class="am-icon-edit"></i>
+											</div>
 										</div>
-										<div class="am-table-cell am-text-right">
-											<div style="display: inline-block;height: 50px;width: 50px;background-color: red;">
-												<!--<button class="">删除</button>-->
+
+										<div class="delelteItem">
+											<div style="display: table;height: 100%;width: 100%;">
+												<div style="display: table-cell;vertical-align: middle;text-align: center;color: white;">删除</div>
 											</div>
 										</div>
 									</div>
@@ -162,9 +194,9 @@
 
 									<div class="am-u-sm-7 am-list-item-operation editItemEditor" style="display: none;">
 										<div class="am-u-sm-9 am-btn-group">
-											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>-</strong></button>
-											<button type="button" class="am-btn am-btn-primary  am-btn-xs">2</button>
-											<button type="button" class="am-btn am-btn-primary am-round  am-btn-xs"><strong>+</strong></button>
+											<button type="button" class="am-btn am-btn-primary am-btn-xs"><strong>-</strong></button>
+											<button type="button" class="am-btn am-btn-primary am-btn-xs">2</button>
+											<button type="button" class="am-btn am-btn-primary am-btn-xs"><strong>+</strong></button>
 										</div>
 										<div class="am-u-sm-2" style="height: 100%;">
 											<button class="am-btn am-btn-danger" style="height: 100%;">删除</button>
@@ -181,7 +213,7 @@
 			<div class="am-list-news-ft">
 				<div class="am-text-left am-list-news-ft-all">
 					<label class="am-checkbox am-danger">
-  						<input type="checkbox" onclick="changeSelectAllInCart(this)" checked="checked" value="" data-am-ucheck checked / > 全选
+  						<input id="selectAll" type="checkbox" onclick="changeSelectAllInCart(this)" checked="checked" value="" data-am-ucheck checked /> 全选
 					</label>
 				</div>
 
@@ -190,7 +222,7 @@
 				</div>
 
 				<div class="am-text-right am-list-news-ft-checkout">
-					<a class="am-btn" href="#">结算(8)</a>
+					<a href="#"></a>
 				</div>
 			</div>
 		</div>

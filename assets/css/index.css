@@ -13,8 +13,16 @@
 .am-form-field-search {
 	border-radius: 50px;
 	width: 350px;
-	
-	
+}
+
+.my-inline{
+	display: inline;
+}
+
+.cartbadge-index{
+	position: relative;
+	left: -1rem;
+	top: 3px;
 }
 
 .themeColor{
@@ -29,11 +37,11 @@
 	/*border-top: 1px solid gainsboro;*/
 }
 
-.defaultNavItem span{
+.defaultNavItem a > span{
 	color: grey;
 }
 
-.selectedNavItem span{
+.selectedNavItem a > span{
 	color: darkred;
 }
 
