@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Hello Amaze UI</title>
+		<title>用户中心</title>
 
 		<!-- Set render engine for 360 browser -->
 		<meta name="renderer" content="webkit">
@@ -32,26 +32,25 @@
 		<meta name="msapplication-TileColor" content="#0e90d2">
 
 		<link rel="stylesheet" href="assets/css/amazeui.min.css">
-		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="stylesheet" href="assets/css/usercenter.css" />
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/amazeui.min.js"></script>
 	</head>
 
-	<body>
-		<div class="am-panel am-panel-primary">
-			<div class="am-panel-hd am-panel-title-for-usercenter">
+	<body style="background-color: gainsboro;">
+			<div class="am-panel-title-for-usercenter">
 				<span>用户中心</span>
 			</div>
 			
-			<div class="am-panel-hd am-panel-title-for-usercenter-banner">
+			<div class="am-panel-title-for-usercenter-banner">
 				<div class="am-text-center">
 				 	<div><img src="img/Lighthouse.jpg"  style="width:100px;height:100px;border-radius:100px;"/></div>
-				 	<div><span>用户名</span></div>
+				 	<div><span>Eirence</span></div>
 				</div>
 			</div>
 
-			<div class="am-panel-bd">
-				<ul class="am-list am-list-for-usercenter">
+			<div>
+				<ul class="am-list am-list-for-usercenter" style="background-color: white;">
 					<li>
 						<i class="am-icon-heart-o am-icon-fw" style="color: red;"></i> 我的收藏<span class="am-badge am-badge-success am-round"><span class="am-icon-arrow-right"></span></span>
 					</li>
@@ -64,10 +63,8 @@
 						<i class="am-icon-map-marker am-icon-fw" style="color: green;"></i> 我的地址<span class="am-badge am-badge-success am-round"><span class="am-icon-arrow-right"></span></span>
 					</li>
 			    </ul>
-			</div>
-			
-			<div class="am-panel-bd">
-			    <ul class="am-list am-list-for-usercenter">
+			    
+			    <ul class="am-list am-list-for-usercenter" style="background-color: white;">
 					<li>
 						<i class="am-icon-gift am-icon-fw" style="color: palevioletred;"></i> 推荐有奖<span class="am-badge am-badge-success am-round"><span class="am-icon-arrow-right"></span></span>
 					</li>
@@ -77,45 +74,6 @@
 					</li>
 				</ul>
 			</div>
-		</div>
-
-		<!--
-        	作者：1159722573@qq.com
-        	时间：2017-09-07
-        	描述：置底工具栏
-        -->
-		<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default footNav">
-			<ul class="am-navbar-nav am-cf am-avg-sm-4">
-				<li class="seletedNavItem">
-					<a href="index.html" class="">
-						<span class="am-icon-home navbarIconColor"></span>
-						<span class="am-navbar-label navbarIconColor">首页</span>
-					</a>
-				</li>
-				<!--<li data-am-navbar-share>-->
-				<li class="seletedNavItem">
-					<a href="cart.html" class="">
-						<!--<span class="am-icon-share-square-o"></span>-->
-						<!--<i class="fa fa-shopping-cart" aria-hidden="true"></i>-->
-						<span class="am-icon-shopping-cart navbarIconColor"></span>
-						<span class="am-navbar-label navbarIconColor">购物车</span>
-					</a>
-				</li>
-				<li class="seletedNavItem">
-					<a href="order.html" class="">
-						<span class="am-icon-list-alt navbarIconColor"></span>
-						<span class="am-navbar-label navbarIconColor">订单</span>
-					</a>
-				</li>
-				<li class="seletedNavItem">
-					<a href="usercenter.html" class="">
-						<span class="am-icon-user navbarIconColor"></span>
-						<span class="am-navbar-label navbarIconColor">用戶中心</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-
 	</body>
 
 </html>

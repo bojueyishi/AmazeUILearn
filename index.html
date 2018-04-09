@@ -40,7 +40,7 @@
 			function setIframeHeight() {
 				var iframe = document.getElementById("mainContent");
 				if (iframe) {
-					iframe.height = window.innerHeight-49;
+					iframe.height = (window.innerHeight - 50) +"px";
 				}
 			};
 			
@@ -52,34 +52,31 @@
 					$(".selectedNavItem").attr("class", "defaultNavItem");
 					$(target).attr("class", "selectedNavItem");
 				}
+				
 				$("#homeNav").click(function() {
 					changeNavItemColor(this);
 					$("#mainContent").attr("src", "home.html");
-					setIframeHeight();
 				});
 				$("#cartNav").click(function() {
 					changeNavItemColor(this);
 					$("#mainContent").attr("src", "cart.html");
-					setIframeHeight();
 				});
 				$("#orderNav").click(function() {
 					changeNavItemColor(this);
 					$("#mainContent").attr("src", "create_order.html");
-					setIframeHeight();
 				});
 				$("#usercenterNav").click(function() {
 					changeNavItemColor(this);
 					$("#mainContent").attr("src", "usercenter.html");
-					setIframeHeight();
 				});
 			});
 		</script>
 
 	</head>
 
-	<body>
-
-		<iframe src="home.html" frameborder="0" width="100%" onload="setIframeHeight()" id="mainContent">
+	<body onload="setIframeHeight()">
+		
+		<iframe id="mainContent" src="home.html" frameborder="0" width="100%">
 		</iframe>
 
 		<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default footNav">
@@ -90,20 +87,23 @@
 						<span class="am-navbar-label ">首页</span>
 					</a>
 				</li>
+				
 				<li class="defaultNavItem" id="cartNav">
 					<a>
-						<span class="am-icon-shopping-cart" style="display: inline;"></span>
-						<sup><span class="am-badge am-badge-danger am-round cartbadge-index">6</span></sup>
+						<span class="am-icon-shopping-cart"></span>
+						<!--<sup><span class="am-badge am-badge-danger am-round cartbadge-index">6</span></sup>-->
 						<span class="am-navbar-label">购物车</span>
 						
 					</a>
 				</li>
+				
 				<li class="defaultNavItem" id="orderNav">
 					<a>
 						<span class="am-icon-list-alt "></span>
 						<span class="am-navbar-label ">订单</span>
 					</a>
 				</li>
+				
 				<li class="defaultNavItem" id="usercenterNav">
 					<a>
 						<span class="am-icon-user"></span>
